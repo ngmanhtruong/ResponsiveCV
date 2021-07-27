@@ -45,8 +45,8 @@ p {
   background: white;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-  grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr;
   -webkit-box-shadow: 0 35px 35px rgba(0, 0, 0, 0.1);
   box-shadow: 0 35px 35px rgba(0, 0, 0, 0.1);
   margin: 50px; }
@@ -57,9 +57,89 @@ p {
       grid-template-columns: repeat(1, 1fr); } }
   .resume .left-section {
     position: relative;
+    background: white;
+    padding: 40px; }
+    .resume .left-section .about {
+      margin-bottom: 50px; }
+      .resume .left-section .about:last-child {
+        margin-bottom: 0; }
+      .resume .left-section .about .wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin: 10px 0; }
+        .resume .left-section .about .wrap .year-company {
+          padding-top: 3px;
+          min-width: 150px; }
+          .resume .left-section .about .wrap .year-company h5 {
+            text-transform: uppercase;
+            color: #848c90;
+            font-weight: 500; }
+            .resume .left-section .about .wrap .year-company h5:nth-child(2) {
+              font-weight: bold;
+              color: #333; }
+        .resume .left-section .about .wrap .text h4 {
+          text-transform: uppercase;
+          color: #2a7da2;
+          font-size: 16px; }
+      .resume .left-section .about.skills .wrap {
+        position: relative;
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 150px 1fr;
+        grid-template-columns: 150px 1fr;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .resume .left-section .about.skills .wrap h4 {
+          text-transform: uppercase;
+          color: #848c99;
+          font-weight: 500; }
+        .resume .left-section .about.skills .wrap .percent {
+          position: relative;
+          width: 100%;
+          height: 10px;
+          background: #f0f0f0; }
+          .resume .left-section .about.skills .wrap .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4; }
+      .resume .left-section .about.interest ul {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1250px) {
+          .resume .left-section .about.interest ul {
+            -ms-grid-columns: (1fr)[2];
+            grid-template-columns: repeat(2, 1fr); } }
+        .resume .left-section .about.interest ul li {
+          list-style: none;
+          color: #333;
+          font-weight: 500;
+          margin: 10px 0;
+          text-align: center; }
+          @media (max-width: 1250px) {
+            .resume .left-section .about.interest ul li {
+              text-align: left; } }
+          .resume .left-section .about.interest ul li .fas {
+            color: #03a9f4;
+            font-size: 18px; }
+  .resume .right-section {
+    position: relative;
     background: #003147;
     padding: 40px; }
-    .resume .left-section .profile-text {
+    .resume .right-section .profile-text {
       position: relative;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -73,18 +153,18 @@ p {
       align-items: center;
       padding-bottom: 20px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-      .resume .left-section .profile-text .img {
+      .resume .right-section .profile-text .img {
         position: relative;
         width: 200px;
         height: 200px;
         border-radius: 50%;
         overflow: hidden; }
-        .resume .left-section .profile-text .img img {
+        .resume .right-section .profile-text .img img {
           width: 100%;
           position: absolute;
           top: -10%;
           left: 0; }
-      .resume .left-section .profile-text h2 {
+      .resume .right-section .profile-text h2 {
         color: #fff;
         font-size: 1.5em;
         margin-top: 20px;
@@ -92,131 +172,54 @@ p {
         text-align: center;
         font-weight: 600;
         line-height: 1.4em; }
-        .resume .left-section .profile-text h2 span {
+        .resume .right-section .profile-text h2 span {
           font-size: 0.8em;
           font-weight: 300; }
-    .resume .left-section .contact-info {
+    .resume .right-section .contact-info {
       padding-top: 40px; }
-      .resume .left-section .contact-info ul {
+      .resume .right-section .contact-info ul {
         position: relative; }
-        .resume .left-section .contact-info ul li {
+        .resume .right-section .contact-info ul li {
           position: relative;
           list-style: none;
           margin-bottom: 15px;
           cursor: pointer; }
-          .resume .left-section .contact-info ul li .icon {
+          .resume .right-section .contact-info ul li .icon {
             display: inline-block;
             width: 30px;
             font-size: 18px;
             color: #03a9f4; }
-          .resume .left-section .contact-info ul li span {
+          .resume .right-section .contact-info ul li span {
             color: #fff;
             font-weight: 300;
             font-size: 16px; }
-      .resume .left-section .contact-info.education h5 {
+            .resume .right-section .contact-info ul li span a {
+              text-decoration: none;
+              color: #fff; }
+      .resume .right-section .contact-info.education h5 {
         color: #03a9f4;
         font-weight: 500; }
-      .resume .left-section .contact-info.education h4 {
+      .resume .right-section .contact-info.education h4 {
         font-weight: 300;
         color: white; }
-        .resume .left-section .contact-info.education h4:nth-child(2) {
+        .resume .right-section .contact-info.education h4:nth-child(2) {
           font-weight: 500; }
-      .resume .left-section .contact-info.military-service h5 {
+      .resume .right-section .contact-info.military-service h5 {
         color: #03a9f4;
         font-weight: 500; }
-      .resume .left-section .contact-info.military-service h4 {
+      .resume .right-section .contact-info.military-service h4 {
         font-weight: 300;
         color: white; }
-      .resume .left-section .contact-info.language .percent {
+      .resume .right-section .contact-info.language .percent {
         position: relative;
         width: 100%;
         height: 6px;
         background: black;
         display: block;
         margin-top: 5px; }
-        .resume .left-section .contact-info.language .percent div {
+        .resume .right-section .contact-info.language .percent div {
           position: absolute;
           top: 0;
           left: 0;
           height: 100%;
           background: #03a9f4; }
-  .resume .right-section {
-    position: relative;
-    background: white;
-    padding: 40px; }
-    .resume .right-section .about {
-      margin-bottom: 50px; }
-      .resume .right-section .about:last-child {
-        margin-bottom: 0; }
-      .resume .right-section .about .wrap {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        margin: 20px 0; }
-        .resume .right-section .about .wrap .year-company {
-          padding-top: 3px;
-          min-width: 150px; }
-          .resume .right-section .about .wrap .year-company h5 {
-            text-transform: uppercase;
-            color: #848c90;
-            font-weight: 500; }
-            .resume .right-section .about .wrap .year-company h5:nth-child(2) {
-              font-weight: bold;
-              color: #333; }
-        .resume .right-section .about .wrap .text h4 {
-          text-transform: uppercase;
-          color: #2a7da2;
-          font-size: 16px; }
-      .resume .right-section .about.skills .wrap {
-        position: relative;
-        width: 100%;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 150px 1fr;
-        grid-template-columns: 150px 1fr;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center; }
-        .resume .right-section .about.skills .wrap h4 {
-          text-transform: uppercase;
-          color: #848c99;
-          font-weight: 500; }
-        .resume .right-section .about.skills .wrap .percent {
-          position: relative;
-          width: 100%;
-          height: 10px;
-          background: #f0f0f0; }
-          .resume .right-section .about.skills .wrap .percent div {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background: #03a9f4; }
-      .resume .right-section .about.interest ul {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr); }
-        @media (max-width: 1250px) {
-          .resume .right-section .about.interest ul {
-            -ms-grid-columns: (1fr)[2];
-            grid-template-columns: repeat(2, 1fr); } }
-        .resume .right-section .about.interest ul li {
-          list-style: none;
-          color: #333;
-          font-weight: 500;
-          margin: 10px 0;
-          text-align: center; }
-          @media (max-width: 1250px) {
-            .resume .right-section .about.interest ul li {
-              text-align: left; } }
-          .resume .right-section .about.interest ul li .fas {
-            color: #03a9f4;
-            font-size: 18px; }
