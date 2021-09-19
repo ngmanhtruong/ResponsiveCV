@@ -45,24 +45,36 @@ p{
     margin: 50px;
     @media (max-width: 1250px){
         margin: 10px;
-        grid-template-columns: repeat(1,1fr);
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    @media (max-width: 500px){
+        margin: 0px;
     }
     .left-section{
         position: relative;
         background: white;
         padding: 40px;
+        @media (max-width: 550px){
+            padding: 20px;
+        }
         .about{
             margin-bottom: 50px;
             &:last-child{
                 margin-bottom: 0;
             }
             .wrap{
-                display: flex;
-                flex-direction: row;
-                margin: 10px 0;
+                position: relative;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 150px 1fr;
+                justify-content: center;
+                align-items: center;
+                @media (max-width: 550px){
+                    grid-template-columns: 1fr;
+                    padding-bottom: 30px;
+                }
                 .year-company{
-                    padding-top: 3px;
-                    min-width: 150px;
                     h5{
                         text-transform: uppercase;
                         color: #848c90;
@@ -89,6 +101,9 @@ p{
                     grid-template-columns: 150px 1fr;
                     justify-content: center;
                     align-items: center;
+                    @media (max-width: 550px){
+                        grid-template-columns: 1fr;
+                    }
                     h4{
                         text-transform: uppercase;
                         color: #848c99;
@@ -132,12 +147,51 @@ p{
                     }
                 }
             }
+            &.projects{
+                .wrap{
+                    position: relative;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 150px 1fr;
+                    padding-bottom: 30px;
+                    align-items: baseline;
+                    @media (max-width: 550px){
+                        grid-template-columns: 1fr;
+                        padding-bottom: 30px;
+                        word-break: break-all;
+                    }
+                    .skills-used{
+                        padding-top: 3px;
+                        padding-right: 5px;
+                        h5{
+                            text-transform: uppercase;
+                            color: #848c90;
+                            font-weight: 500;
+                            &:nth-child(1){
+                                font-weight: bold;
+                                color: #333;
+                            }
+                        }
+                    }
+                    .text{
+                        a{
+                            text-decoration: none;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .right-section{
         position: relative;
         background: #003147;
         padding: 40px;
+        @media (max-width: 500px){
+            padding: 20px;
+        }
         .profile-text{
             position: relative;
             display: flex;
@@ -174,6 +228,9 @@ p{
         }
         .contact-info{
             padding-top: 40px;
+            @media (max-width: 550px){
+                word-break: break-all;
+            }
             ul{
                 position: relative;
                 li{
@@ -216,6 +273,12 @@ p{
                     color: #03a9f4;
                     font-weight: 500;
                 }
+                h4{
+                    font-weight: 300;
+                    color: white;
+                }
+            }
+            &.soft-skills{
                 h4{
                     font-weight: 300;
                     color: white;

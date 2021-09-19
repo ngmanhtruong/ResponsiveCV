@@ -53,35 +53,52 @@ p {
   @media (max-width: 1250px) {
     .resume {
       margin: 10px;
-      -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr); } }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse; } }
+  @media (max-width: 500px) {
+    .resume {
+      margin: 0px; } }
   .resume .left-section {
     position: relative;
     background: white;
     padding: 40px; }
+    @media (max-width: 550px) {
+      .resume .left-section {
+        padding: 20px; } }
     .resume .left-section .about {
       margin-bottom: 50px; }
       .resume .left-section .about:last-child {
         margin-bottom: 0; }
       .resume .left-section .about .wrap {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        margin: 10px 0; }
-        .resume .left-section .about .wrap .year-company {
-          padding-top: 3px;
-          min-width: 150px; }
-          .resume .left-section .about .wrap .year-company h5 {
-            text-transform: uppercase;
-            color: #848c90;
-            font-weight: 500; }
-            .resume .left-section .about .wrap .year-company h5:nth-child(2) {
-              font-weight: bold;
-              color: #333; }
+        position: relative;
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 150px 1fr;
+        grid-template-columns: 150px 1fr;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        @media (max-width: 550px) {
+          .resume .left-section .about .wrap {
+            -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr;
+            padding-bottom: 30px; } }
+        .resume .left-section .about .wrap .year-company h5 {
+          text-transform: uppercase;
+          color: #848c90;
+          font-weight: 500; }
+          .resume .left-section .about .wrap .year-company h5:nth-child(2) {
+            font-weight: bold;
+            color: #333; }
         .resume .left-section .about .wrap .text h4 {
           text-transform: uppercase;
           color: #2a7da2;
@@ -99,6 +116,10 @@ p {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center; }
+        @media (max-width: 550px) {
+          .resume .left-section .about.skills .wrap {
+            -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr; } }
         .resume .left-section .about.skills .wrap h4 {
           text-transform: uppercase;
           color: #848c99;
@@ -135,10 +156,44 @@ p {
           .resume .left-section .about.interest ul li .fas {
             color: #03a9f4;
             font-size: 18px; }
+      .resume .left-section .about.projects .wrap {
+        position: relative;
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 150px 1fr;
+        grid-template-columns: 150px 1fr;
+        padding-bottom: 30px;
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline; }
+        @media (max-width: 550px) {
+          .resume .left-section .about.projects .wrap {
+            -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr;
+            padding-bottom: 30px;
+            word-break: break-all; } }
+        .resume .left-section .about.projects .wrap .skills-used {
+          padding-top: 3px;
+          padding-right: 5px; }
+          .resume .left-section .about.projects .wrap .skills-used h5 {
+            text-transform: uppercase;
+            color: #848c90;
+            font-weight: 500; }
+            .resume .left-section .about.projects .wrap .skills-used h5:nth-child(1) {
+              font-weight: bold;
+              color: #333; }
+        .resume .left-section .about.projects .wrap .text a {
+          text-decoration: none; }
+          .resume .left-section .about.projects .wrap .text a:hover {
+            cursor: pointer; }
   .resume .right-section {
     position: relative;
     background: #003147;
     padding: 40px; }
+    @media (max-width: 500px) {
+      .resume .right-section {
+        padding: 20px; } }
     .resume .right-section .profile-text {
       position: relative;
       display: -webkit-box;
@@ -177,6 +232,9 @@ p {
           font-weight: 300; }
     .resume .right-section .contact-info {
       padding-top: 40px; }
+      @media (max-width: 550px) {
+        .resume .right-section .contact-info {
+          word-break: break-all; } }
       .resume .right-section .contact-info ul {
         position: relative; }
         .resume .right-section .contact-info ul li {
@@ -208,6 +266,9 @@ p {
         color: #03a9f4;
         font-weight: 500; }
       .resume .right-section .contact-info.military-service h4 {
+        font-weight: 300;
+        color: white; }
+      .resume .right-section .contact-info.soft-skills h4 {
         font-weight: 300;
         color: white; }
       .resume .right-section .contact-info.language .percent {
